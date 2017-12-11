@@ -36,6 +36,8 @@ return [
     */
     'resources' => [
         'users'         => App\Models\User::class,
+        'articles'      => App\Models\Article::class,
+        'comments'      => App\Models\Comment::class,
         'roles'         => App\Models\Role::class,
         'activations'   => App\Models\Activation::class,
     ],

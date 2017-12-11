@@ -20,7 +20,16 @@ JsonApi::register(
     function (Api $api, Router $router) {
         $api->resource('users', [
             'controller' => 'UsersController',
-            'has-many' => ['roles'],
+            'has-many' => ['roles', 'articles'],
             'has-one' => ['activation']
+        ]);
+        $api->resource('articles', [
+            'controller' => 'ArticlesController',
+            'has-one' => ['user'],
+            'has-many' => ['comments']
+        ]);
+        $api->resource('comments', [
+            'controller' => 'CommentsController',
+            'has-one' => ['user', 'article'],
         ]);
     });

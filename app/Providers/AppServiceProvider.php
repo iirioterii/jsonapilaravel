@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\ArticleService;
+use App\Services\CommentService;
 use Illuminate\Support\ServiceProvider;
 use App\Services\UserService;
 use Laracasts\Generators\GeneratorsServiceProvider;
@@ -33,6 +35,12 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(UserService::class, function () {
             return new UserService();
+        });
+        $this->app->bind(ArticleService::class, function () {
+            return new ArticleService();
+        });
+        $this->app->bind(CommentService::class, function () {
+            return new CommentService();
         });
     }
 }
