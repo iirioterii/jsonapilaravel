@@ -15,8 +15,7 @@
         "laravel/homestead": "^5.0",
         "zizaco/entrust": "5.2.x-dev",
         "barryvdh/laravel-debugbar": "^2.4",
-        "fzaninotto/faker": "^1.7",
-        "laravel/passport": "^4.0"
+        "fzaninotto/faker": "^1.7"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
