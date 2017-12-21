@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace PhpUnitTests;
 
 use Illuminate\Contracts\Console\Kernel;
 use Artisan;

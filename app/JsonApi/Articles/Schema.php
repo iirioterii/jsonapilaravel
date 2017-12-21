@@ -20,6 +20,7 @@ class Schema extends EloquentSchema
     protected $attributes = [
         'title',
         'description',
+        'text',
     ];
 
     /**

@@ -55,6 +55,9 @@ class User extends Model implements AuthenticatableUserContract, Authenticatable
         return [
             'user' => [
                 'id' => $this->id,
+                'name' => $this->name,
+                'email' => $this->email,
+                'role'=>$this->roles()->getResults()->toArray(),
             ],
         ];
     }

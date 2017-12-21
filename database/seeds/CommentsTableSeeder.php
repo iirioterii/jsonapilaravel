@@ -15,7 +15,7 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        $comments = factory(Comment::class, 20)->create()->toArray();
+        $comments = factory(Comment::class, 100)->create()->toArray();
 
         DB::table('comments')->truncate();
         DB::table('comments')->insert($comments);

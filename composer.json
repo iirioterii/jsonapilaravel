@@ -15,7 +15,9 @@
         "laravel/homestead": "^5.0",
         "zizaco/entrust": "5.2.x-dev",
         "barryvdh/laravel-debugbar": "^2.4",
-        "fzaninotto/faker": "^1.7"
+        "fzaninotto/faker": "^1.7",
+        "barryvdh/laravel-cors": "^0.10.0",
+        "flow/jsonpath": "^0.3.4"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
@@ -25,7 +27,8 @@
         "mikey179/vfsStream": "1.6.4",
         "xethron/migrations-generator": "^2.0",
         "satooshi/php-coveralls": "dev-master",
-        "laracasts/generators": "dev-master as 1.1.4"
+        "laracasts/generators": "dev-master as 1.1.4",
+        "codeception/codeception": "^2.3"
     },
     "autoload": {
         "classmap": [

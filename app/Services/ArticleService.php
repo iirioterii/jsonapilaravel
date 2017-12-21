@@ -6,11 +6,20 @@ use Auth;
 
 class ArticleService
 {
+
+    const ADMIN_ID = 1;
+
     /**
      * @return bool|array
      */
     public function checkAccess()
     {
+        $userRoles = Auth::user()->roles()->pluck('id')->toArray();
+
+        if (in_array(self::ADMIN_ID, $userRoles)) {
+            return true;
+        }
+
         $userArticlesIds = Auth::guard('api')->user()->articles()->pluck('id')->toArray();
         $articleId = request()->route('record')->getAttributes()['id'];
 

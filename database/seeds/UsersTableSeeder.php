@@ -58,7 +58,6 @@ class UsersTableSeeder extends Seeder
                 'email' => 'lukas@mail.com',
                 'password' => bcrypt('password'),
                 'activated' => 0,
-
             ]
         ]);
     }

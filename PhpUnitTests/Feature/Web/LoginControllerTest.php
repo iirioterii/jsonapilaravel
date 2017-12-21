@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature\Web;
+namespace PhpUnitTests\Feature\Web;
 
 use Illuminate\Support\Facades\Session;
-use Tests\TestCase;
+use PhpUnitTests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;

@@ -21,7 +21,7 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run()
     {
-        $articles = factory(Article::class, 20)->create()->toArray();
+        $articles = factory(Article::class, 100)->create()->toArray();
 
         DB::table('articles')->truncate();
         DB::table('articles')->insert($articles);

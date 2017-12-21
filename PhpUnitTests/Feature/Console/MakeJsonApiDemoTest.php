@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Feature\Console;
+namespace PhpUnitTests\Feature\Console;
 
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamDirectory;
-use Tests\TestCase;
+use PhpUnitTests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature;
+namespace PhpUnitTests\Feature;
 
-use Tests\TestCase;
+use PhpUnitTests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -11,7 +11,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
-class ForgotPasswordControllerTest extends TestCase
+class LoginControllerTest extends TestCase
 {
     use DatabaseTransactions;
 
@@ -20,13 +20,16 @@ class ForgotPasswordControllerTest extends TestCase
      *
      * @param $userData
      */
-    public function testForgotPassword($userData)
+    public function testLogin($userData)
     {
+        $userData['password'] = Hash::make('password');
+
         factory(User::class)->create($userData);
 
-        $response = $this->json('POST', '/api/v1/password/forgot',
+        $response = $this->json('POST', '/api/v1/login',
             [
-                'email' => $userData['email']
+                'email' => $userData['email'],
+                'password' => 'password'
             ]
         );
 
@@ -38,16 +41,17 @@ class ForgotPasswordControllerTest extends TestCase
      *
      * @param $userData
      */
-    public function testForgotPasswordError($userData)
+    public function testLoginError($userData)
     {
         factory(User::class)->create($userData);
 
-        $response = $this->json('POST', '/api/v1/password/forgot',
+        $response = $this->json('POST', '/api/v1/login',
             [
-                'email' => 'wrong.email@mail.com'
+                'email' => $userData['email'],
+                'password' => 'password-wrong'
             ]
         );
 
-        $response->assertStatus(404);
+        $response->assertStatus(401);
     }
 }

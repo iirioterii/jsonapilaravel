@@ -12,6 +12,7 @@ class Hydrator extends EloquentHydrator
     protected $attributes = [
         'title',
         'description',
+        'text',
     ];
 
     /**

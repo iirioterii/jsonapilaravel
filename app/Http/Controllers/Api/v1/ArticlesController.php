@@ -105,6 +105,7 @@ class ArticlesController extends EloquentController
      *           type="object",
      *           @SWG\Property(property="title", type="string", example="How to be a good programmer?", description="required"),
      *           @SWG\Property(property="description", type="string", example="This article discover you a secret method to be a prosperous...", description="required"),
+     *           @SWG\Property(property="text", type="string", example="Some text", description="required"),
      *         )
      *       )
      *     )
@@ -121,7 +122,6 @@ class ArticlesController extends EloquentController
         $this->model->user_id = $user->id; // Set to model userId
 
         return parent::create($request);
-
     }
 
     /**
@@ -155,6 +155,7 @@ class ArticlesController extends EloquentController
      *           type="object",
      *           @SWG\Property(property="title", type="string", example="Some updated article", description="required"),
      *           @SWG\Property(property="description", type="string", example="Some new updated description", description="required"),
+     *           @SWG\Property(property="text", type="string", example="Some new updated text", description="required"),
      *         )
      *       )
      *     )

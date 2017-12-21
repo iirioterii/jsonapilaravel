@@ -1,15 +1,20 @@
 <?php
 
-namespace Tests\Feature\Web;
+namespace PhpUnitTests\Feature;
 
-use Tests\TestCase;
+use PhpUnitTests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Tymon\JWTAuth\Facades\JWTAuth;
+use App\Services\ActivationService;
 
 class ResetPasswordControllerTest extends TestCase
 {
+
     use DatabaseTransactions;
 
     /**
@@ -23,7 +28,7 @@ class ResetPasswordControllerTest extends TestCase
 
         $token = app('auth.password.broker')->createToken($user);
 
-        $response = $this->post('/password/reset',
+        $response = $this->json('POST', '/api/v1/password/reset',
             [
                 'email' => $userData['email'],
                 'password' => 'password-new',
@@ -32,7 +37,7 @@ class ResetPasswordControllerTest extends TestCase
             ]
         );
 
-        $response->assertRedirect('/home');
+        $response->assertStatus(200);
     }
 
     /**
@@ -44,7 +49,7 @@ class ResetPasswordControllerTest extends TestCase
     {
         factory(User::class)->create($userData);
 
-        $response = $this->post('/password/reset',
+        $response = $this->json('POST', '/api/v1/password/reset',
             [
                 'email' => $userData['email'],
                 'password' => 'password-new',
@@ -53,6 +58,6 @@ class ResetPasswordControllerTest extends TestCase
             ]
         );
 
-        $response->assertRedirect('/');
+        $response->assertStatus(400);
     }
 }

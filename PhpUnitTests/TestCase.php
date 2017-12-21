@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace PhpUnitTests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use App\Models\User;

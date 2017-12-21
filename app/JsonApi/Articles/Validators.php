@@ -20,6 +20,7 @@ class Validators extends AbstractValidatorProvider
     protected $allowedFilteringParameters = [
         'id',
         'title',
+        'text',
         'description',
         'created_at',
         'updated_at',
@@ -31,6 +32,7 @@ class Validators extends AbstractValidatorProvider
     protected $allowedSortParameters = [
         'id',
         'title',
+        'text',
         'description',
         'created_at',
         'updated_at',
@@ -55,10 +57,12 @@ class Validators extends AbstractValidatorProvider
     {
         $title = 'required|max:255';
         $description = 'required|min:20|max:500';
+        $text = 'required';
 
         return [
             'title' => $title,
             'description' => $description,
+            'text' => $text,
         ];
     }
 
@@ -73,6 +77,5 @@ class Validators extends AbstractValidatorProvider
      */
     protected function relationshipRules(RelationshipsValidatorInterface $relationships, $record = null)
     {
-        $relationships->hasMany('comments', CommentsSchema::RESOURCE_TYPE, is_null($record), false);
     }
 }

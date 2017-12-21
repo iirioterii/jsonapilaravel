@@ -1,0 +1,20 @@
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+actor_suffix: Tester
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+modules:
+    enabled:
+        - Db:
+            dsn: 'mysql:host=localhost;port:3306;dbname=homestead_testing'
+            user: 'homestead'
+            password: 'secret'
+            dump: 'tests/_data/dump.sql'
+            populate: true # run populator before all tests
+            cleanup: true # run populator before each test
+            populator: 'mysql -u $user -h $host $dbname < $dump'
