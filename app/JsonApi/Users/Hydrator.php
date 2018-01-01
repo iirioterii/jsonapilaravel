@@ -14,6 +14,11 @@ class Hydrator extends EloquentHydrator
         'email',
         'password',
         'activated',
+        'firstname',
+        'lastname',
+        'middlename',
+        'gender',
+        'birthday',
     ];
 
     /**

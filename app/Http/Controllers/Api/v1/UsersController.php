@@ -118,6 +118,11 @@ class UsersController extends EloquentController
      *           @SWG\Property(property="email", type="string", example="user@mail.com", description="required"),
      *           @SWG\Property(property="password", type="string", example="password", description="required"),
      *           @SWG\Property(property="name", type="string", example="Steven", description="required"),
+     *           @SWG\Property(property="firstname", type="string", example="Serg"),
+     *           @SWG\Property(property="middlename", type="string", example="Vitalievich"),
+     *           @SWG\Property(property="lastname", type="string", example="Shpack"),
+     *           @SWG\Property(property="gender", type="string", example="male"),
+     *           @SWG\Property(property="birthday", type="string", example="1992-05-20"),
      *           @SWG\Property(
      *             property="activated",
      *             type="string",
@@ -165,7 +170,7 @@ class UsersController extends EloquentController
      *     name="id",
      *     description="",
      *     required=true,
-     *     default="1",
+     *     default="2",
      *     type="integer"
      *   ),
      *   @SWG\Parameter(
@@ -178,13 +183,18 @@ class UsersController extends EloquentController
      *         property="data",
      *         type="object",
      *         @SWG\Property(property="type", type="string", default="users", example="users"),
-     *         @SWG\Property(property="id", type="string", default="1", example="1"),
+     *         @SWG\Property(property="id", type="string", default="2", example="2"),
      *         @SWG\Property(
      *           property="attributes",
      *           type="object",
-     *           @SWG\Property(property="email", type="string", example="user@mail.com", description="required"),
+     *           @SWG\Property(property="email", type="string", example="usernew@mail.com", description="required"),
      *           @SWG\Property(property="password", type="string", example="Password1", description="required"),
      *           @SWG\Property(property="name", type="string", example="Steven", description="required"),
+     *           @SWG\Property(property="firstname", type="string", example="Serg"),
+     *           @SWG\Property(property="middlename", type="string", example="Vitalievich"),
+     *           @SWG\Property(property="lastname", type="string", example="Shpack"),
+     *           @SWG\Property(property="gender", type="string", example="male"),
+     *           @SWG\Property(property="birthday", type="string", example="1992-05-20"),
      *           @SWG\Property(
      *             property="activated",
      *             type="string",

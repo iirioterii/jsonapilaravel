@@ -33,6 +33,11 @@ class Validators extends AbstractValidatorProvider
         'name',
         'email',
         'activated',
+        'firstname',
+        'lastname',
+        'middlename',
+        'gender',
+        'birthday',
         'created_at',
         'updated_at'
     ];
@@ -67,6 +72,11 @@ class Validators extends AbstractValidatorProvider
             'name' => 'required|max:32',
             'email' => $email,
             'password' => $password,
+            'firstname' => 'min:2|max:255|nullable',
+            'lastname' => 'min:2|max:255|nullable',
+            'middlename' => 'min:2|max:255|nullable',
+            'gender' => 'in:male,female',
+            'birthday' => 'date|nullable',
         ];
     }
 

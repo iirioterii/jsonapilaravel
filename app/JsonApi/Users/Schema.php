@@ -21,6 +21,11 @@ class Schema extends EloquentSchema
         'name',
         'email',
         'activated',
+        'firstname',
+        'lastname',
+        'middlename',
+        'gender',
+        'birthday',
     ];
 
     /**
